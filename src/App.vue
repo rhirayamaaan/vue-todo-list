@@ -1,30 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
   <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" /> -->
-  <TodoList />
+  <TodoListContainer />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-// import HelloWorld from "./components/HelloWorld.vue";
-import TodoList from "./containers/TodoList/index.vue";
+import TodoListContainer from "./containers/TodoList/index.vue";
+import "destyle.css/destyle.min.css";
+
+import { Modules } from "./modules";
 
 export default defineComponent({
   name: "App",
   components: {
-    // HelloWorld,
-    TodoList,
+    TodoListContainer,
+  },
+  setup() {
+    Modules.get().setup();
   },
 });
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+:root {
+  font: 16px/1.8 Helvetica, Arial, Roboto, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans CJK JP", sans-serif;
+  color: #222;
 }
 </style>
